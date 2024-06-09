@@ -28,7 +28,7 @@ class ConnectionManager:
             {
                 "sender_id": data["sender_id"],
                 "receiver_id": data["receiver_id"],
-                "timestamp": dt,
+                "timestamp": str(dt),
                 "message": data["message_text"]
             }
         )
