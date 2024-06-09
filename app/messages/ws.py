@@ -19,7 +19,7 @@ class ConnectionManager:
 
     async def send_personal_message(self, data: dict, websocket: WebSocket):
 
-        dt = datetime.datetime.now(datetime.UTC)
+        dt = datetime.datetime.utcnow()
         data["dt"] = dt
 
         await self.add_message_to_db(data)
