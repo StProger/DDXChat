@@ -1,5 +1,6 @@
 from app.chats.models import Chats
 
+
 def choose_dialogs_user(user_id: int, dialogs: list[Chats]):
 
     output_dialogs = []

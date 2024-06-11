@@ -29,7 +29,10 @@ class ConnectionManager:
                 "sender_id": data["sender_id"],
                 "receiver_id": data["receiver_id"],
                 "timestamp": str(dt),
-                "message": data["message_text"]
+                "message": data.get("message_text"),
+                "training_id": data.get("training_id"),
+                "exercise_id": data.get("exercise_id"),
+                "nutrition_id": data.get("nutrition_id")
             }
         )
 
@@ -44,13 +47,20 @@ class ConnectionManager:
         sender_id = data['sender_id']
         receiver_id = data['receiver_id']
         chat = await ChatsDAO.get_chat(first_user_id=sender_id, second_user_id=receiver_id)
-        message_text = data['message_text']
+        message_text = data.get('message_text')
+        training_id = data.get("training_id")
+        exercise_id = data.get("exercise_id")
+        nutrition_id = data.get("nutrition_id")
+
 
         await MessagesDAO.add(
             chat_id=chat.id,
             sender_id=sender_id,
             receiver_id=receiver_id,
             message_text=message_text,
+            training_id=training_id,
+            exercise_id=exercise_id,
+            nutrition_id=nutrition_id,
             timestamp=dt
         )
 

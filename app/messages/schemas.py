@@ -9,5 +9,8 @@ class SMessages(BaseModel):
     chat_id: int
     sender_id: int
     receiver_id: int
-    message_text: str
+    message_text: str | None
     timestamp: datetime
+    training_id: int | None
+    exercise_id: int | None
+    nutrition_id: int | None
