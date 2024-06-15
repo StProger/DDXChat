@@ -6,7 +6,7 @@ from app.messages.schemas import SMessages
 from app.chats.utils import choose_dialogs_user
 
 
-router = APIRouter(prefix="/chats",
+router = APIRouter(prefix="chat/chats",
                    tags=["Чаты"])
 
 

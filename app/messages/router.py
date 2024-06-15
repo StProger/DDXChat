@@ -5,7 +5,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.messages import manager
 
 
-router = APIRouter(prefix="/fitness_messages", tags=["Сообщения"])
+router = APIRouter(prefix="/chat/fitness_messages", tags=["Сообщения"])
 
 
 @router.websocket("/ws/{user_id}")
