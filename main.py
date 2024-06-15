@@ -19,7 +19,7 @@ async def lifespan(app: FastAPI):
         await conn.run_sync(Base.metadata.create_all)
     yield
 
-app = FastAPI(lifespan=lifespan, docs_url="/chat/docs")
+app = FastAPI(lifespan=lifespan, root_path="/chat")
 
 app.include_router(chat_router)
 app.include_router(message_router)
